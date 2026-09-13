@@ -1,12 +1,15 @@
 /**
- * ตรวจสัดส่วนโลโก้ footer: ขนาดไฟล์จริง vs ขนาดที่เรนเดอร์ + 클래스ที่ใช้
+ * ตรวจสัดส่วนโลโก้ header/footer: ขนาดไฟล์จริง vs ขนาดที่เรนเดอร์ + คลาสที่ใช้
+ * รัน: node scripts/check-logo-ratio.mjs [url]
  */
 import { chromium } from 'playwright'
+
+const URL = process.argv[2] ?? 'https://design.bizxai.cloud/showcase'
 
 const browser = await chromium.launch({ args: ['--no-sandbox'] })
 const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'th-TH', deviceScaleFactor: 2 })
 const page = await context.newPage()
-await page.goto('https://design.bizxai.cloud/showcase', { waitUntil: 'networkidle' })
+await page.goto(URL, { waitUntil: 'networkidle' })
 
 const info = await page.evaluate(() =>
   [...document.querySelectorAll('footer img, header img')]
