@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/brand/mobyconnex-mark.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0E1A5A" />
+    <meta name="description" content="MobyConnex Design System — ระบบดีไซน์และคอมโพเนนต์มาตรฐานสำหรับผลิตภัณฑ์ของ MobyConnex" />
+    <title>MobyConnex — ระบบดีไซน์</title>
+    <style>
+      /* ค่าเริ่มต้นโหมดสว่าง — ถ้าผู้ใช้เลือกมืดจะสลับด้วย html[data-theme="dark"] */
+      html { background: #FFFFFF; color-scheme: light; }
+      html[data-theme="dark"] { background: #060D23; color-scheme: dark; }
+      #boot-fallback {
+        display: none; max-width: 34rem; margin: 15vh auto; padding: 1.5rem;
+        font-family: "IBM Plex Sans Thai Looped", system-ui, sans-serif; line-height: 1.7;
+        color: #0B1B3A; background: #F2F8FB; border: 1px solid #DAE7F3; border-radius: 14px;
+      }
+      #boot-fallback h1 { font-size: 1.15rem; margin: 0 0 .5rem; }
+      #boot-fallback code { background: #EEF1FB; padding: .1rem .35rem; border-radius: 4px; }
+      html[data-theme="dark"] #boot-fallback { color: #F2F5FF; background: #0B1432; border-color: #24325F; }
+      html[data-theme="dark"] #boot-fallback code { background: #16234F; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <div id="boot-fallback">
+      <h1>เบราว์เซอร์นี้ยังแสดงเว็บไม่ครบ</h1>
+      <p>หน้าเว็บต้องใช้ JavaScript ในการแสดงผล หากเปิดจากในแอป (LINE / Facebook / Messenger)
+      กรุณากดเมนูมุมขวาบน แล้วเลือก <code>เปิดในเบราว์เซอร์</code> (Chrome หรือ Safari) อีกครั้ง</p>
+      <p>หากยังไม่แสดง กรุณาอัปเดตเบราว์เซอร์ให้เป็นเวอร์ชันล่าสุด</p>
+    </div>
+    <noscript>
+      <div style="max-width:34rem;margin:15vh auto;padding:1.5rem;font-family:system-ui,sans-serif;line-height:1.7">
+        <h1 style="font-size:1.15rem">ต้องเปิดใช้งาน JavaScript</h1>
+        <p>เว็บไซต์นี้ต้องใช้ JavaScript ในการแสดงผล กรุณาเปิดใช้งานแล้วโหลดหน้าใหม่อีกครั้ง</p>
+      </div>
+    </noscript>
+
+    <script>
+      // ถ้าแอปไม่ mount ภายใน 6 วินาที (JS เก่า/ถูกบล็อก/เครือข่ายช้า) ให้แสดงคำแนะนำแทนหน้าขาว
+      window.setTimeout(function () {
+        var root = document.getElementById('root')
+        var fb = document.getElementById('boot-fallback')
+        if (root && fb && root.children.length === 0) {
+          fb.style.display = 'block'
+        }
+      }, 6000)
+    </script>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

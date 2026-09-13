@@ -1,0 +1,88 @@
+@import './tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-bg text-fg font-body antialiased;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4, h5 { @apply font-heading font-semibold text-fg; line-height: 1.35; }
+  h1 { @apply text-3xl md:text-4xl; }
+  h2 { @apply text-2xl md:text-3xl; }
+  h3 { @apply text-xl; }
+  code, pre { @apply font-mono; }
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  ::selection { background: var(--accent); color: var(--accent-fg); }
+}
+
+@layer components {
+  .card-surface { @apply bg-surface border border-line rounded-lg shadow-e1; }
+  .doc-prose p { @apply text-fg-soft; }
+  .token-swatch { @apply rounded-lg border border-line overflow-hidden; }
+  .grid-lines {
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* ---------- พื้นโทนสี (สลับ section ให้หน้าไม่ขาวล้วน) ---------- */
+  .tint-teal { background-image: var(--tint-teal); }
+  .tint-lime { background-image: var(--tint-lime); }
+  .tint-navy { background-image: var(--tint-navy); }
+  .tint-sun  { background-image: var(--tint-sun); }
+  .wash-hero { background-image: var(--wash-hero); }
+
+  /* ---------- ตัวอักษรไล่สีแบรนด์ ---------- */
+  .text-gradient {
+    background-image: linear-gradient(95deg, #18979E 0%, #4FC57F 35%, #7ED956 55%, #0E1A5A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .dark .text-gradient {
+    background-image: linear-gradient(95deg, #4FD7DE 0%, #7ED956 55%, #D6F3C4 100%);
+  }
+
+  /* ---------- การ์ด/ชิปที่มีสี ---------- */
+  .chip-teal { background: var(--teal-soft); color: var(--teal); }
+  .chip-lime { background: var(--accent-soft); color: #3F7A1F; }
+  .chip-navy { background: var(--brand-soft); color: var(--brand); }
+  .chip-sun  { background: var(--sun-soft); color: #B26A00; }
+  .dark .chip-lime { color: #A8E88A; }
+  .dark .chip-sun { color: #FBBF24; }
+
+  /* แถบสีด้านบนการ์ด */
+  .topline-teal { border-top: 3px solid var(--teal); }
+  .topline-lime { border-top: 3px solid var(--accent); }
+  .topline-navy { border-top: 3px solid var(--brand); }
+  .topline-sun  { border-top: 3px solid var(--sun); }
+
+  /* แถบสีข้าง (ใช้กับหัวข้อ section) */
+  .accent-bar { position: relative; padding-left: 14px; }
+  .accent-bar::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 4px; bottom: 4px;
+    width: 4px;
+    border-radius: 999px;
+    background-image: linear-gradient(180deg, #18979E, #7ED956);
+  }
+
+  /* แผงโทนกรมท่า (กล่องติดต่อ / footer) — สลับค่าเองตามธีม */
+  .panel-navy { background: var(--panel-navy); color: var(--panel-navy-fg); }
+
+  /* แถบไล่สีแบรนด์ (เส้นคั่น/ไฮไลต์) */
+  .brand-rule {
+    height: 4px;
+    border-radius: 999px;
+    background-image: linear-gradient(90deg, #18979E 0%, #7ED956 50%, #0E1A5A 100%);
+  }
+}
+
+/* scrollbar ใน sidebar */
+.thin-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }

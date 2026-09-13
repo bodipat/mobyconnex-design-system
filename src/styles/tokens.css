@@ -1,0 +1,111 @@
+/* MobyConnex Design System — Brand tokens
+   แก้ที่ไฟล์นี้ไฟล์เดียวเพื่อเปลี่ยนแบรนด์ทั้งระบบ
+   ที่มา: โลโก้ MobyConnex (teal #18979E → เขียว #7ED956 → กรมท่า เข้มขึ้น 10% = #0E1A5A) */
+
+:root {
+  /* พื้นผิว */
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #F2F8FB;
+  --surface-3: #E6F1F7;
+  --border: #DAE7F3;
+  --border-strong: #BFD3E6;
+  --fg: #0B1B3A;
+  --fg-soft: #2F3F66;
+  --muted: #55668C;
+
+  /* แบรนด์ (navy เข้มขึ้น 10%) */
+  --brand: #0E1A5A;
+  --brand-strong: #091242;
+  --brand-fg: #FFFFFF;
+  --brand-soft: #EDF1FF;
+  --accent: #7ED956;
+  --accent-fg: #0B2A0E;
+  --accent-soft: #E8F9DC;
+  --teal: #18979E;
+  --teal-soft: #DFF4F5;
+  --sun: #F5A623;
+  --sun-soft: #FEF3E0;
+
+  /* แผงโทนเข้ม (กล่องติดต่อ / footer) */
+  --panel-navy: #0A123A;
+  --panel-navy-fg: #FFFFFF;
+
+  /* พื้นโทนสี */
+  --tint-teal: linear-gradient(180deg, #EAF8F9 0%, #FFFFFF 100%);
+  --tint-lime: linear-gradient(180deg, #F1FBE7 0%, #FFFFFF 100%);
+  --tint-navy: linear-gradient(180deg, #EEF2FE 0%, #FFFFFF 100%);
+  --tint-sun:  linear-gradient(180deg, #FEF7EC 0%, #FFFFFF 100%);
+  --wash-hero: radial-gradient(900px 420px at 12% -10%, #D8F2F4 0%, rgba(255,255,255,0) 60%),
+               radial-gradient(760px 380px at 88% 0%, #E7F9D9 0%, rgba(255,255,255,0) 62%),
+               radial-gradient(620px 340px at 60% 110%, #E3E9FF 0%, rgba(255,255,255,0) 65%);
+
+  /* สถานะ */
+  --success: #15803D;  --success-soft: #E6F7EC;
+  --warning: #B45309;  --warning-soft: #FEF3E2;
+  --danger: #B91C1C;   --danger-soft: #FDECEC;
+  --info: #0E7490;     --info-soft: #E2F5F9;
+
+  /* มุมโค้ง */
+  --radius-sm: 6px; --radius: 10px; --radius-lg: 14px; --radius-xl: 20px; --radius-2xl: 28px;
+
+  /* เงา */
+  --shadow-1: 0 1px 2px rgba(15, 29, 100, 0.07);
+  --shadow-2: 0 6px 18px rgba(15, 29, 100, 0.10);
+  --shadow-3: 0 18px 44px rgba(11, 20, 60, 0.16);
+
+  /* ระยะ */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+
+  /* ฟอนต์ */
+  --font-heading: Kanit, "IBM Plex Sans Thai Looped", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Thai Looped", Inter, system-ui, sans-serif;
+}
+
+/* โหมดมืด = โครงเดียวกับโหมดสว่าง (โทนสีเดียวกัน แต่กลับความสว่างของพื้น) */
+[data-theme="dark"], .dark {
+  --bg: #060D23;
+  --surface: #0B1432;
+  --surface-2: #0F1A3F;
+  --surface-3: #141F47;
+  --border: #202D56;
+  --border-strong: #303E6E;
+  --fg: #F2F5FF;
+  --fg-soft: #D3DBF5;
+  --muted: #9AA8CE;
+
+  /* ปุ่มหลักในโหมดมืด = เขียว (ตัดกับพื้นกรมได้ดี) */
+  --brand: #7ED956;
+  --brand-strong: #93E372;
+  --brand-fg: #08210C;
+  --brand-soft: #16264A;
+  --accent: #7ED956;
+  --accent-fg: #08210C;
+  --accent-soft: #12253F;
+  --teal: #4FD7DE;
+  --teal-soft: #0E2E3C;
+  --sun: #FBBF24;
+  --sun-soft: #33280C;
+
+  --panel-navy: #0A1338;
+  --panel-navy-fg: #F2F5FF;
+
+  /* พื้นโทนสีในโหมดมืด — ใช้ลำดับสีเดียวกับโหมดสว่าง ให้จังหวะหน้าตรงกัน */
+  --tint-teal: linear-gradient(180deg, #0A2233 0%, #060D23 100%);
+  --tint-lime: linear-gradient(180deg, #122A1E 0%, #060D23 100%);
+  --tint-navy: linear-gradient(180deg, #101A46 0%, #060D23 100%);
+  --tint-sun:  linear-gradient(180deg, #2A2110 0%, #060D23 100%);
+  --wash-hero: radial-gradient(900px 420px at 12% -10%, #0E3552 0%, rgba(7,14,39,0) 60%),
+               radial-gradient(760px 380px at 88% 0%, #16351D 0%, rgba(7,14,39,0) 62%),
+               radial-gradient(620px 340px at 60% 110%, #151F4E 0%, rgba(7,14,39,0) 65%);
+
+  --success: #4ADE80;  --success-soft: #0F2A1B;
+  --warning: #FBBF24;  --warning-soft: #2C2109;
+  --danger: #F87171;   --danger-soft: #2C1214;
+  --info: #67E8F9;     --info-soft: #0B2733;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.55);
+  --shadow-2: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --shadow-3: 0 18px 44px rgba(0, 0, 0, 0.6);
+}

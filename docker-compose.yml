@@ -1,0 +1,12 @@
+services:
+  moby-design:
+    build:
+      context: /opt/moby-design
+      dockerfile: Dockerfile
+    image: moby-design:local
+    container_name: moby-design
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3110:80"
+    security_opt:
+      - no-new-privileges:true
