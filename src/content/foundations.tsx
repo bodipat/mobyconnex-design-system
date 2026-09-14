@@ -20,15 +20,18 @@ export function LogoDoc() {
               { src: '/brand/mobyconnex-horizontal.png', label: 'แนวนอน — พื้นสว่าง', note: 'ใช้เป็นค่าเริ่มต้นในเว็บ/เอกสาร' },
               { src: '/brand/mobyconnex-on-navy.png', label: 'แนวนอน — พื้นกรมท่า', note: 'ใช้บนพื้นเข้ม/สไลด์' },
               { src: '/brand/mobyconnex-footer.png', label: 'แนวนอน — ฝังพื้นกรมท่า (ทึบ)', note: 'ใช้เมื่อพื้นหลังสีคงที่ ไม่มีรอยกล่อง' },
-              { src: '/brand/mobyconnex-horizontal-dark.png', label: 'แนวนอน — โปร่งใสสำหรับพื้นเข้ม', note: 'ใช้บนพื้นเข้มที่เปลี่ยนสี/ภาพถ่าย' },
-              { src: '/brand/mobyconnex-on-green.png', label: 'แนวนอน — พื้นเขียว', note: 'ใช้ในงานโปรโมชัน' },
+              { src: '/brand/mobyconnex-horizontal-dark.png', label: 'แนวนอน — โปร่งใสสำหรับพื้นเข้ม', note: 'ใช้บนพื้นเข้มที่เปลี่ยนสี/ภาพถ่าย', bg: '#0B1547' },
+              { src: '/brand/mobyconnex-on-green.png', label: 'แนวนอน — บนพื้นเขียว (โทนขาว)', note: 'ใช้ในงานโปรโมชัน' },
               { src: '/brand/mobyconnex-vertical.png', label: 'แนวตั้ง — พื้นสว่าง', note: 'ใช้เมื่อพื้นที่แคบ' },
-              { src: '/brand/mobyconnex-vertical-dark.png', label: 'แนวตั้ง — พื้นเข้ม', note: 'ใช้บนพื้นกรมท่า/พื้นเข้ม ในพื้นที่แคบ' },
+              { src: '/brand/mobyconnex-vertical-dark.png', label: 'แนวตั้ง — พื้นเข้ม', note: 'ใช้บนพื้นกรมท่า/พื้นเข้ม ในพื้นที่แคบ', bg: '#0B1547' },
               { src: '/brand/mobyconnex-mark.png', label: 'มาร์คเดี่ยว (โครงข่าย)', note: 'ใช้เป็นไอคอนแอป/อวตาร เมื่อมีพื้นที่จำกัด' },
             ].map((l) => (
               <Card key={l.label}>
                 <CardContent className="flex flex-col gap-3 pt-5">
-                  <div className="grid h-32 place-items-center rounded border border-line bg-[#F2F8FB]">
+                  <div
+                    className="grid h-32 place-items-center rounded border border-line"
+                    style={{ background: l.bg ?? '#F2F8FB' }}
+                  >
                     <img src={l.src} alt={l.label} className="max-h-24 w-auto" />
                   </div>
                   <div>
