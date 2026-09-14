@@ -20,8 +20,11 @@ export function LogoDoc() {
               { src: '/brand/mobyconnex-horizontal.png', label: 'แนวนอน — พื้นสว่าง', note: 'ใช้เป็นค่าเริ่มต้นในเว็บ/เอกสาร' },
               { src: '/brand/mobyconnex-on-navy.png', label: 'แนวนอน — พื้นกรมท่า', note: 'ใช้บนพื้นเข้ม/สไลด์' },
               { src: '/brand/mobyconnex-footer.png', label: 'แนวนอน — ฝังพื้นกรมท่า (ทึบ)', note: 'ใช้เมื่อพื้นหลังสีคงที่ ไม่มีรอยกล่อง' },
+              { src: '/brand/mobyconnex-horizontal-dark.png', label: 'แนวนอน — โปร่งใสสำหรับพื้นเข้ม', note: 'ใช้บนพื้นเข้มที่เปลี่ยนสี/ภาพถ่าย' },
               { src: '/brand/mobyconnex-on-green.png', label: 'แนวนอน — พื้นเขียว', note: 'ใช้ในงานโปรโมชัน' },
               { src: '/brand/mobyconnex-vertical.png', label: 'แนวตั้ง — พื้นสว่าง', note: 'ใช้เมื่อพื้นที่แคบ' },
+              { src: '/brand/mobyconnex-vertical-dark.png', label: 'แนวตั้ง — พื้นเข้ม', note: 'ใช้บนพื้นกรมท่า/พื้นเข้ม ในพื้นที่แคบ' },
+              { src: '/brand/mobyconnex-mark.png', label: 'มาร์คเดี่ยว (โครงข่าย)', note: 'ใช้เป็นไอคอนแอป/อวตาร เมื่อมีพื้นที่จำกัด' },
             ].map((l) => (
               <Card key={l.label}>
                 <CardContent className="flex flex-col gap-3 pt-5">
